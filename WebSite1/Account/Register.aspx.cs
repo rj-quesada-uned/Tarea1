@@ -26,13 +26,14 @@ public partial class Account_Register : Page
         string email = Email.Text;
         string phone = PhoneNumber.Text;
         string password = Password.Text;
+        string cantonId = idCanton.Text;
 
         string connectionString = ConfigurationManager.ConnectionStrings["Tarea1"].ConnectionString;
 
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            string query = "INSERT INTO Users (id, id_type, name, last_name, email, phone, password) VALUES (@Id, @Id_Type, @Name, @Last_Name, @Email, @Phone, @Password)";
+            string query = "INSERT INTO Users (id, id_type, name, last_name, email, phone, password, canton_id) VALUES (@Id, @Id_Type, @Name, @Last_Name, @Email, @Phone, @Password, @Canton_Id)";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
@@ -43,6 +44,7 @@ public partial class Account_Register : Page
                 command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@Phone", phone);
                 command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@Canton_Id", cantonId);
 
                 connection.Open();
                 int rowsAffected = command.ExecuteNonQuery();
