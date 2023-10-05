@@ -6,10 +6,11 @@
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
 
-    <div class="form-horizontal">
+    <div id="registerForm" class="form-horizontal">
         <h4>Cree una cuenta nueva.</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
+
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="idOptions" CssClass="col-md-2 control-label">Tipo de identificación</asp:Label>
             <div class="col-md-10">
@@ -25,12 +26,12 @@
                     CssClass="text-danger"
                     ErrorMessage="El campo tipo de identificación es obligatorio.">
                 </asp:RequiredFieldValidator>
-            </div>
+            </div> 
             </div>
         </div>
 
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Número de cédula</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Número de cédula o residencia</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
@@ -53,6 +54,33 @@
                 <asp:TextBox runat="server" ID="LastName" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
                     CssClass="text-danger" ErrorMessage="El campo apellido es obligatorio." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <asp:Label runat="server" AssociatedControlID="idProvince" CssClass="col-md-2 control-label">Provincia</asp:Label>
+            <div class="col-md-10">
+                <asp:DropDownList ID="idProvince" runat="server" CssClass="form-select" AutoPostBack="true" OnSelectedIndexChanged="idProvince_SelectedIndexChanged">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator
+                    runat="server"
+                    ControlToValidate="idProvince"
+                    InitialValue=""
+                    CssClass="text-danger"
+                    ErrorMessage="El campo provincia es obligatorio.">
+                </asp:RequiredFieldValidator>
+            </div>
+            <asp:Label runat="server" AssociatedControlID="idCanton" CssClass="col-md-2 control-label">Canton</asp:Label>
+            <div id="divCanton" class="col-md-10" runat="server" style="visibility:hidden;">
+                <asp:DropDownList ID="idCanton" runat="server" CssClass="form-select" >
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator
+                    runat="server"
+                    ControlToValidate="idCanton"
+                    InitialValue=""
+                    CssClass="text-danger"
+                    ErrorMessage="El campo canton es obligatorio.">
+                </asp:RequiredFieldValidator>
             </div>
         </div>
 
@@ -115,6 +143,7 @@
                 <asp:Button ID="btnClean" runat="server" OnClick="CleanFields_Click" Text="Limpiar Campos" CssClass="btn btn-danger" />
             </div>
         </div>
+        <script src="../js/idFormat.js"></script>
     </div>
 </asp:Content>
 
