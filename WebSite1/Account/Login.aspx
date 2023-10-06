@@ -15,7 +15,7 @@
                         </p>
                     </asp:PlaceHolder>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Nombre de usuario</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Numero de cedula o residencia</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"

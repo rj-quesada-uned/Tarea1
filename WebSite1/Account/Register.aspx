@@ -29,13 +29,12 @@
             </div> 
             </div>
         </div>
-
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">Número de cédula o residencia</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="UserName" CssClass="form-control"/>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
-                    CssClass="text-danger" ErrorMessage="El campo número de cédula es obligatorio." />
+                    CssClass="text-danger" ErrorMessage="El campo número de cédula es obligatorio."/>
             </div>
         </div>
 
@@ -140,7 +139,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button ID="btnClean" runat="server" OnClick="CleanFields_Click" Text="Limpiar Campos" CssClass="btn btn-danger" />
+                <a runat="server" href="~/Account/Register" class="btn btn-danger">Limpiar Campos</a>
             </div>
         </div>
         <script src="../js/idFormat.js"></script>

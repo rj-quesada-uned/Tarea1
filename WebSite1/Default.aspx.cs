@@ -57,7 +57,7 @@ public partial class _Default : Page
             string query = "SELECT IdType.name as id_type_name, Users.name as user_name, Users.phone as user_phone, Users.last_name as user_lastname,  Users.email as user_email," +
                            "IdType.name, Users.id as user_id, Province.name as province_name, Canton.name as canton_name " +
                            "FROM Users INNER JOIN IdType on Users.id_type = IdType.id INNER JOIN Canton on Users.canton_id = Canton.id " +
-                           "INNER JOIN Province on Canton.province_id = Province.id WHERE Users.id = 1";
+                           "INNER JOIN Province on Canton.province_id = Province.id WHERE Users.id = @UserId";
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {

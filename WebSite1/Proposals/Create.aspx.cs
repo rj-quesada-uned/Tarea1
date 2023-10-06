@@ -14,13 +14,6 @@ public partial class Proposals_Create : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string directorio = Server.MapPath("~/data");
-
-        // Nombre del archivo
-        string nombreArchivo = "datos.txt";
-
-        // Ruta completa del archivo
-        string rutaArchivo = Path.Combine(directorio, nombreArchivo);
         if (Session["UserId"] == null)
         {
             Response.Redirect("/");

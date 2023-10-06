@@ -19,7 +19,7 @@ public partial class Account_Register : Page
     }
     protected void CreateUser_Click(object sender, EventArgs e)
     {
-        string id = UserName.Text;
+        string id = UserName.Text.Replace("-", "");
         string idType = idOptions.Text;
         string name = Name.Text;
         string lastName = LastName.Text;
@@ -127,16 +127,5 @@ public partial class Account_Register : Page
         {
             divCanton.Style["visibility"] = "hidden";
         }
-    }
-
-    protected void CleanFields_Click(object sender, EventArgs e)
-    {
-        UserName.Text = string.Empty;
-        idOptions.Text = string.Empty;
-        Name.Text = string.Empty;
-        LastName.Text = string.Empty;
-        Email.Text = string.Empty;
-        PhoneNumber.Text = string.Empty;
-        Password.Text = string.Empty;
     }
 }

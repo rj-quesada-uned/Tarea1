@@ -14,10 +14,9 @@ public partial class Account_Login : Page
     {
         if (!IsPostBack)
         {
-            // Verifica si el usuario ha iniciado sesión
             if (Session["UserId"] != null)
             {
-                // Response.Redirect("~/");
+                Response.Redirect("~/");
             }
         }
     }
@@ -26,7 +25,6 @@ public partial class Account_Login : Page
             string id = UserName.Text;
             string password = Password.Text;
 
-            // Realiza una consulta SQL para verificar las credenciales
             string connectionString = ConfigurationManager.ConnectionStrings["Tarea1"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -41,7 +39,7 @@ public partial class Account_Login : Page
                     object result = command.ExecuteScalar();
                     connection.Close();
 
-                    if (result != null) // Usuario autenticado
+                    if (result != null)
                     {
                         Session["UserId"] = id;
                         Session["Authenticated"] = true;

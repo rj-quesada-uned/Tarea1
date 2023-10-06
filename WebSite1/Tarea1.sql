@@ -1,5 +1,7 @@
 create database Tarea1;
 
+Go
+
 use Tarea1;
 
 create table Province (

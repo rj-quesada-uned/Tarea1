@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Create.aspx.cs" Inherits="Proposals_Create" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h1>Crear un nuevo blog</h1>
+    <h1>Crear una nueva propuesta legislativa</h1>
     <div>
         <div class="form-group">
             <label>Título:</label>
